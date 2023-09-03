@@ -25,7 +25,7 @@ jobs:
       - name: Clone target branch
         run: |
           REMOTE_BRANCH="origin/main"
-          REMOTE_REPO="https://IToolkit-co:${{ secrets.GITHUB_TOKEN }}@github.com/blog.git"
+          REMOTE_REPO="https://github.com/IToolkit-co/blog.git"
 
           echo "Publishing to  on branch ${REMOTE_BRANCH}"
           rm -rf _site/
