@@ -12,7 +12,7 @@
           <pagination-posts
             class="mt-10"
             v-if="$page.posts.pageInfo.totalPages > 1"
-            base="/blog"
+            base="/collection"
             :totalPages="$page.posts.pageInfo.totalPages"
             :currentPage="$page.posts.pageInfo.currentPage"
           />
@@ -68,12 +68,12 @@ query Posts ($page: Int) {
 <script>
 export default {
   metaInfo: {
-    title: 'Blog',
+    title: 'Blog'
   },
   components: {
     AppSidebar: () => import('~/components/parts/AppSidebar'),
     PaginationPosts: () => import('~/components/PaginationPosts'),
-    PostCard: () => import('~/components/PostCard'),
-  },
+    PostCard: () => import('~/components/PostCard')
+  }
 }
 </script>

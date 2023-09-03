@@ -74,7 +74,7 @@
         </div>
         <div class="text-center mb-8">
           <g-link
-            to="/blog"
+            to="/collection"
             class="
               font-bold
               uppercase

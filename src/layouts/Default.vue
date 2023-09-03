@@ -137,7 +137,7 @@ export default {
     SiteLogo: () => import('~/components/SiteLogo'),
     SearchInput: () => import('~/components/SearchInput'),
     ThemeSwitcher: () => import('~/components/ThemeSwitcher'),
-    AppFooter: () => import('~/components/parts/AppFooter'),
+    AppFooter: () => import('~/components/parts/AppFooter')
   },
   mounted() {
     this.theme = localStorage.getItem('theme') || 'light'
@@ -150,9 +150,9 @@ export default {
         {
           key: 'blog',
           name: 'Blog',
-          to: '/blog/',
-        },
-      ],
+          to: '/collection/'
+        }
+      ]
     }
   },
   methods: {
@@ -161,8 +161,8 @@ export default {
     },
     updateTheme(theme) {
       this.theme = theme
-    },
-  },
+    }
+  }
 }
 </script>
 
