@@ -8,11 +8,11 @@ In this blog, I'll be sharing tips and tricks for getting the most out of some o
 
 IToolkit offers a suite of data encoding and decoding tools perfect for developers and IT professionals.
 
-The [Base64 Encoder/Decoder](https://itoolkit.co/base64-encode) makes it easy to securely encode strings and files into a compact Base64 format. This is useful for transmitting data over networks and storing data in databases.
+The [Base64 Encoder/Decoder](https://itoolkit.co/app/base64-encode) makes it easy to securely encode strings and files into a compact Base64 format. This is useful for transmitting data over networks and storing data in databases.
 
-For URL encoding, check out the [URL Encoder/Decoder](https://itoolkit.co/url-encode). It can encode URLs and query strings into a proper format for transmission over the internet.
+For URL encoding, check out the [URL Encoder/Decoder](https://itoolkit.co/app/url-encode). It can encode URLs and query strings into a proper format for transmission over the internet.
 
-And for hashing sensitive data like passwords, there's the handy [MD5 Hash Generator](https://itoolkit.co/md5-hash). It creates secure MD5 checksums perfect for verifying data integrity.
+And for hashing sensitive data like passwords, there's the handy [MD5 Hash Generator](https://itoolkit.co/app/md5-hash). It creates secure MD5 checksums perfect for verifying data integrity.
 
 ## Conclusion
 
