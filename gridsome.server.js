@@ -6,18 +6,18 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 // Include files and configuration needed for cover image generator
-const fs = require("fs-extra")
-const generateCover = require("./src/functions/generate-cover")
+const fs = require('fs-extra')
+const generateCover = require('./src/functions/generate-cover')
 const coverOptions = {
-  imgWidth: "1024",
-  imgHeight: "576",
+  imgWidth: '1024',
+  imgHeight: '576',
   types: [
     {
-      name:     "Posts",
-      typeName: "Post",
-      path:     "blog"
+      name: 'Posts',
+      typeName: 'Post',
+      path: 'blog'
     }
-  ],
+  ]
   // Set Colours
   // colours:  [
   //   "#559BFF",
@@ -29,7 +29,7 @@ const coverOptions = {
   // ]
 }
 
-module.exports = function (api) {
+module.exports = function(api) {
   api.loadSource(({ addMetadata, addCollection }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
 
@@ -69,38 +69,40 @@ module.exports = function (api) {
         sidebar: {
           type: 'String',
           resolve(obj) {
-            return (obj.sidebar === undefined ? 'Default' : obj.sidebar)
+            return obj.sidebar === undefined ? 'Default' : obj.sidebar
           }
         }
       }
     })
   })
-  api.loadSource(async (actions) => {
+  api.loadSource(async actions => {
     if (process.env.AUTO_GENERATE_COVER) {
       // Loop through each type to create a cover image for
-      coverOptions.types.forEach(function (type) {
-        console.log("Generating cover images for " + type.name)
+      coverOptions.types.forEach(function(type) {
+        console.log('Generating cover images for ' + type.name)
         const collection = actions.getCollection(type.typeName)
         const outputPath = `${type.path}`
         fs.ensureDirSync(outputPath)
-        collection.data().forEach(function (node) {
+        collection.data().forEach(function(node) {
           if (node.internal.typeName === type.typeName) {
-            if (node.thumbnail !== undefined) {
-              const output = `${node.thumbnail}`
-              fs.access(output, (error) => {
-                if (error) {
-                  console.log(`Creating ${output}`)
-                  generateCover(output, node.cover_title ?? node.title, coverOptions)
-                } else {
-                  console.log(`${output} already exists`)
-                }
-              })
-            }
+            // if (node.thumbnail !== undefined) {
+            //   const output = `${node.thumbnail}`
+            //   fs.access(output, (error) => {
+            //     if (error) {
+            //       console.log(`Creating ${output}`)
+            //       generateCover(output, node.cover_title ?? node.title, coverOptions)
+            //     } else {
+            //       console.log(`${output} already exists`)
+            //     }
+            //   })
+            // }
           }
         })
       })
     } else {
-      console.log("If you would like to automatically generate cover images, set AUTO_GENERATE_COVER in your env file to true.")
+      console.log(
+        'If you would like to automatically generate cover images, set AUTO_GENERATE_COVER in your env file to true.'
+      )
     }
   })
 }

@@ -11,13 +11,9 @@
     "
   >
     <g-link :to="`${post.node.path}/`" class="text-copy-primary">
-      <g-image
+      <img
         class="lg:h-48 md:h-36 w-full object-cover object-center"
-        :src="
-          post.node.thumbnail
-            ? post.node.thumbnail.src
-            : '/images/default-thumb.png'
-        "
+        :src="post.node.thumbnail.trim()"
         :alt="post.node.title"
       />
     </g-link>
@@ -84,6 +80,6 @@
 
 <script>
 export default {
-  props: ['post'],
+  props: ['post']
 }
 </script>

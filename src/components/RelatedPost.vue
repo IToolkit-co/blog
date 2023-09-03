@@ -12,7 +12,7 @@
       :key="post.path"
     >
       <g-link :to="post.path" class="block relative rounded overflow-hidden">
-        <g-image
+        <img
           :alt="post.title"
           class="
             object-cover object-center
@@ -22,9 +22,7 @@
             hover:bg-gray-100
             dark:hover:bg-gray-600
           "
-          :src="
-            post.thumbnail ? post.thumbnail.src : '/images/default-thumb.png'
-          "
+          :src="post.thumbnail.trim()"
         />
       </g-link>
       <div class="mt-4">
@@ -60,8 +58,8 @@ export default {
   props: {
     posts: {
       type: Array,
-      default: null,
-    },
-  },
+      default: null
+    }
+  }
 }
 </script>

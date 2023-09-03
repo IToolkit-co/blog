@@ -21,10 +21,10 @@
       </aside>
 
       <section class="w-full md:w-4/7 flex flex-col px-2 md:px-10">
-        <g-image
+        <img
           class="mb-8"
           v-if="$page.post.thumbnail"
-          :src="$page.post.thumbnail.src"
+          :src="$page.post.thumbnail.trim()"
         />
         <h1 class="text-4xl font-bold leading-tight">{{ $page.post.title }}</h1>
         <div class="text-xl text-gray-400 mt-2 mb-8">
@@ -240,12 +240,7 @@ export default {
 
   computed: {
     getThumbnailImage() {
-      let thumbnailImage = `${this.getBaseUrl}/default-thumb.png`
-      const cover = this.$page.post.thumbnail
-      if (cover != null) {
-        thumbnailImage = `${this.getBaseUrl}${this.$page.post.thumbnail.src}`
-      }
-      return thumbnailImage
+      return this.$page.post.thumbnail.trim()
     },
     getBaseUrl() {
       return process.env.GRIDSOME_BASE_URL

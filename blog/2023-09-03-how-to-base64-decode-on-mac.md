@@ -5,7 +5,7 @@ date: 2021-10-18
 summary: Learn how to decode base64 on Mac using Terminal commands like base64 or free online Base64 decoder tools.
 tags: ['Base64']
 categories: ['Base64']
-thumbnail: ./2023-09-03-how-to-base64-decode-on-mac.png
+thumbnail: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*hzE_QoqVCUt66HzliEalNg.png
 is_archived: false
 sidebar: Alternative
 ---
